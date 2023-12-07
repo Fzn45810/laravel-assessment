@@ -42,4 +42,22 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function roles(){
+        return $this->belongsToMany('App\Models\Role');
+    }
+
+    public function hasAnyRoles($roles){
+        if($this->roles()->where('name', $roles)->first()){
+            return true;
+        }
+        return false;
+    }
+
+    public function hasRole($role){
+        if($this->roles()->where('name', $role)->first()){
+            return true;
+        }
+        return false;
+    }
 }
