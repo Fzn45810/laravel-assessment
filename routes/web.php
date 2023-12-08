@@ -19,4 +19,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware('can:admin')->group(function() {
+
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+});
+
+Route::middleware('can:polio-worker')->group(function() {
+    Route::get('/polioworker', [App\Http\Controllers\PolioWorkerController::class, 'index'])->name('index');
+});

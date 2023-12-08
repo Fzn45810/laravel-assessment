@@ -27,7 +27,7 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         Gate::define('polio-worker', function($user){
-            return $user->hasRole('polio_worker');
+            return $user->hasRole('polioworker');
         });
     }
 }

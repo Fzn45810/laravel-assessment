@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $polioworker = 'polioworker';
+        $get_polio_worker = User::with('roles')
+        ->whereHas('roles', function ($query) use ($polioworker) {
+            return $query->where('name', $polioworker);
+        })->get();
+        return view('home', compact('get_polio_worker'));
     }
 }
