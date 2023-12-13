@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->unsignedBigInteger('individual_household_id')->index();
-            $table->string('household_members_name');
+            $table->string('name');
 
             $table->foreign('individual_household_id')->references('id')->on('individual_households')->cascadeOnDelete();
 

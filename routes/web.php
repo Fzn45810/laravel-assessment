@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
 Auth::routes();
@@ -27,4 +27,8 @@ Route::middleware('can:admin')->group(function() {
 
 Route::middleware('can:polio-worker')->group(function() {
     Route::get('/polioworker', [App\Http\Controllers\PolioWorkerController::class, 'index'])->name('index');
+
+    // routes/web.php
+    Route::get('/getvalue', [App\Http\Controllers\PolioWorkerController::class, 'get_value'])->name('getvalue');
+
 });

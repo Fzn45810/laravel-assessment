@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->unsignedBigInteger('union_council_id')->index();
-            $table->string('individual_household_name');
+            $table->string('name');
 
             $table->foreign('union_council_id')->references('id')->on('union_councils')->cascadeOnDelete();
 

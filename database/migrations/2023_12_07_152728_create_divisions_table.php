@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->unsignedBigInteger('provincial_id')->index();
-            $table->string('division_name');
+            $table->string('name');
 
             $table->foreign('provincial_id')->references('id')->on('provincials')->cascadeOnDelete();
             $table->timestamps();

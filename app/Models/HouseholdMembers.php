@@ -9,7 +9,7 @@ class HouseholdMembers extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['household_members_name'];
+    protected $fillable = ['name'];
 
     public function individual_household()
     {

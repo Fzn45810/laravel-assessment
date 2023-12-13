@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tehsils', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('district_id')->index();
-            $table->string('tehsil_name');
+            $table->string('name');
 
             $table->foreign('district_id')->references('id')->on('districts')->cascadeOnDelete();
             $table->timestamps();

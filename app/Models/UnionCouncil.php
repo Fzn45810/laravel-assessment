@@ -9,7 +9,7 @@ class UnionCouncil extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['union_council_name'];
+    protected $fillable = ['name'];
 
     public function tehsil()
     {

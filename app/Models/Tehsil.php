@@ -9,7 +9,7 @@ class Tehsil extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['tehsil_name'];
+    protected $fillable = ['name'];
 
     public function district()
     {

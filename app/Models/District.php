@@ -9,7 +9,7 @@ class District extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['district_name'];
+    protected $fillable = ['name'];
 
     public function division()
     {

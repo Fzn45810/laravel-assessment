@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('districts', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('division_id')->index();
-            $table->string('district_name');
+            $table->string('name');
 
             $table->foreign('division_id')->references('id')->on('divisions')->cascadeOnDelete();
             $table->timestamps();
