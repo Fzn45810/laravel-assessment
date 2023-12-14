@@ -20,4 +20,9 @@ class UnionCouncil extends Model
     {
         return $this->hasMany(IndividualHousehold::class);
     }
+
+    public function workers()
+    {
+        return $this->belongsToMany(User::class, 'union_council_workers', 'union_council_id', 'worker_id');
+    }
 }

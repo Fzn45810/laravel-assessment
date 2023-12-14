@@ -21,7 +21,7 @@
 
     <!-- Custom styles for this page -->
     <link href="{{ asset ('assets/admin/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body id="page-top">
@@ -53,15 +53,15 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- Heading -->
+            {{-- <!-- Heading -->
             <div class="sidebar-heading">
                 Interface
-            </div>
+            </div> --}}
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{route('polio-worker.assignment')}}">
                     <i class="fas fa-fw fa-key"></i>
-                    <span>Links</span></a>
+                    <span>Union Council Assignment</span></a>
             </li>
 
 
@@ -153,19 +153,21 @@
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset ('assets/admin/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset ('assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" 
+    integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $('.multi-select').select2({
+                placeholder: 'Select option'
+            });
+        })
+    </script>
     <!-- Core plugin JavaScript-->
     <script src="{{ asset ('assets/admin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="{{ asset ('assets/admin/js/sb-admin-2.min.js') }}"></script>
-
-    <!-- Page level plugins -->
-    <script src="{{ asset ('assets/admin/vendor/chart.js/Chart.min.js') }}"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="{{ asset ('assets/admin/js/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ asset ('assets/admin/js/demo/chart-pie-demo.js') }}"></script>
 
     <!-- Page level plugins -->
     <script src="{{ asset ('assets/admin/vendor/datatables/jquery.dataTables.min.js') }}"></script>

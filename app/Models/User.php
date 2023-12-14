@@ -53,4 +53,9 @@ class User extends Authenticatable
         }
         return false;
     }
+
+    public function councils()
+    {
+        return $this->belongsToMany(UnionCouncil::class, 'union_council_workers', 'worker_id','union_council_id',);
+    }
 }

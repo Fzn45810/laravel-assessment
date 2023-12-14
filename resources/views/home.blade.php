@@ -24,15 +24,9 @@
                                     <th>#</th>
                                     <th>Name</th>
                                     <th>Email</th>
+                                    <th>Council</th>
                                 </tr>
                             </thead>
-                            <tfoot>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                </tr>
-                            </tfoot>
                             <tbody>
                                 @php($count = 1)
                                 @foreach($get_polio_worker as $data)
@@ -40,6 +34,15 @@
                                     <td>{{$count++}}</td>
                                     <td>{{$data->name}}</td>
                                     <td>{{$data->email}}</td>
+                                    <td>
+                                        @if(count($data->councils) == 0)
+                                        No Council Assigned
+                                        @else
+                                        @foreach($data->councils as $each)
+                                            {{$each->name}}&nbsp;
+                                        @endforeach
+                                        @endif
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
